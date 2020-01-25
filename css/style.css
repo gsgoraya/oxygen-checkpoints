@@ -22,7 +22,7 @@ div.th-checkpoint-item > .th-checkpoint-delete > svg {
 }
 
 #th-oxy-checkpoints small {
-    sposition: relative;
+    position: relative;
     top: -200px;
     z-index: -1;
     padding: 20px;
