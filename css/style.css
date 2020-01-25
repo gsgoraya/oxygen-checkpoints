@@ -1,0 +1,31 @@
+#th-oxy-checkpoints .ct-elements-managers-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+div.th-checkpoint-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  background-color:rgb(52, 60, 67);
+  color: #fff;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 3px;
+}
+
+div.th-checkpoint-item > .th-checkpoint-delete > svg {
+  color: red;
+  transform: scale(0.8);
+}
+
+#th-oxy-checkpoints small {
+    sposition: relative;
+    top: -200px;
+    z-index: -1;
+    padding: 20px;
+    display: inline-block;
+    color: rgba(255, 100, 0, 1);
+}
