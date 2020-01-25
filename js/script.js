@@ -26,7 +26,7 @@
 			</div>`);
 
 		function deleteItem(e) {
-			let index = parseInt($(e.target).attr('data-index'));
+			let index = parseInt($(e.target).closest('.th-checkpoint-delete').attr('data-index'));
 			if(confirm('Are you sure, you want to DELETE this checkpoint?')) {
 				checkpoints.splice(index, 1);
 				renderList();
@@ -36,7 +36,7 @@
 		function applyItem(e) {
 			let index = parseInt($(e.target).attr('data-index'));
 			if(confirm('Are you sure, you want to apply this checkpoint?')) {
-				frameWindow.iframeScope.componentsTree = checkpoints[index]['data'];
+				frameWindow.iframeScope.componentsTree = JSON.parse(checkpoints[index]['data']);
 				frameWindow.iframeScope.rebuildDOM();
 				frameWindow.iframeScope.updateDOMTreeNavigator();
 			}
@@ -49,7 +49,7 @@
 			let html = checkpoints.map(function(checkpoint, index) {
 				return `
 					<div class="th-checkpoint-item">
-						<div class="th-checkpoint-delete"><svg data-index="${index}" class="oxygen-close-icon"><use xlink:href="#oxy-icon-cross"></use></svg></div>
+						<div class="th-checkpoint-delete" data-index="${index}"><svg class="oxygen-close-icon"><use xlink:href="#oxy-icon-cross"></use></svg></div>
 						<div class="th-checkpoint-label">${checkpoint.label}</div>
 						<div class="th-checkpoint-apply" ><button data-index="${index}">Apply</button></div>
 					</div>
@@ -81,7 +81,7 @@
 			if(label.trim()!== '') {
 				checkpoints.push({
 					label: label,
-					data: JSON.parse(JSON.stringify(window.frameWindow.iframeScope.componentsTree))
+					data: JSON.stringify(window.frameWindow.iframeScope.componentsTree)
 				});
 
 				renderList();

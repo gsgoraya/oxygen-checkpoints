@@ -4,12 +4,12 @@ Plugin Name: Oxygen Checkpoints
 Author: Gagan S Goraya
 Author URI: https://gagangoraya.com
 Description: Create checkpoints of your oxygen state in the builder and revert to any checkpoint anytime
-Version: 1.0.0
+Version: 1.0.1
 */
 
 class TH_Oxygen_Checkpoints {
 
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 	const PREFIX = 'thoxycheckpoints';
 
 	static function init() {
